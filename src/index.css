@@ -4,7 +4,7 @@
     box-sizing: border-box;
 }
 
-body{
-    background: black;
-    color: white;
+.navbar{
+    display: flex;
+    justify-content: space-between;
 }

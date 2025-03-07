@@ -1,12 +1,15 @@
-import HomePage from "./pages/Home/HomePage"
+import { Header } from "./components/Header"
+import { Main } from "./components/Main"
+
+const API_URL = 'https://api.themoviedb.org/3/discover/movie?api_key=1bb80835710cfd4c04e384c234391bbc'
+
 
 function App() {
-
+  
   return (
     <>
-      <div>
-        <HomePage/>
-      </div>
+      <Header/>
+      <Main/>
     </>
   )
 }
