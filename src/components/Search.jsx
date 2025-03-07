@@ -1,14 +1,10 @@
 import { useState } from "react"
+import { useGlobalContext } from "../context/GlobalContext"
 
 export function Search(){
 
-    const [query, setQuery] = useState('')
+    const { setQuery, HandleSubmit } = useGlobalContext()
 
-
-    const HandleSubmit = (e) => {
-        e.preventDefault()
-        console.log(query)
-    }
     
     return(
         <>

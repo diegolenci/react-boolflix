@@ -14,6 +14,7 @@ const GlobalProvider = ({children}) => {
 
     const value = {
         query,
+        setQuery,
         HandleSubmit
     }
 
