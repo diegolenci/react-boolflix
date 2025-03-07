@@ -11,6 +11,7 @@ const GlobalProvider = ({children}) => {
 
     const [query, setQuery] = useState('')
     const [movies, setMovies] = useState([])
+    const [tvs, setTvs] = useState([])
 
     const HandleSubmit = (e) => {
         e.preventDefault()
@@ -20,12 +21,24 @@ const GlobalProvider = ({children}) => {
         .then( res => setMovies(res.data.results) )
         .catch( err => console.log(err) )
 
+        axios.get(`${endpoint}tv?api_key=${apikey}`)
+        .then( res => setTvs(res.data.results) )
+        .catch( err => console.log(err) )
+
     }
+
+    useEffect( () => {
+        console.log("dati film:" + movies)
+        console.log("dati film:" + tvs)
+        console.log("apikey" + apikey)
+    }, [movies, tvs] )
 
     const value = {
         query,
         setQuery,
-        HandleSubmit
+        HandleSubmit,
+        movies,
+        tvs
     }
 
     return(
